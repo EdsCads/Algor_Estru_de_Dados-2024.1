@@ -4,59 +4,66 @@ public class Main {
 
     public static void main(String[] args) {
 
-        HashTable tabela = new HashTable();
-        tabela.inserirDeArquivo("arquivo_50kb");
-        // tabela.inserir("A");
-        // tabela.inserir("B");
-        // tabela.inserir("C");
-        // tabela.inserir("d");
-        // tabela.inserir("D");
-        // tabela.inserir("f");
-        // tabela.inserir("F");
-        // tabela.inserir("g");
-        // tabela.inserir("G");
-        // tabela.inserir("P");
-        // tabela.inserir("d");
-        // tabela.inserir("g");
-        // tabela.inserir("I");
-        // tabela.inserir("P");
-        // tabela.inserir("dgjhn");
-        // tabela.inserir("sdh");
-        // tabela.inserir("sdghj");
-        // tabela.inserir("tuyh");
-        System.out.println(tabela.buscar("c1yf8w4r6i0ytqnweudfenhh3gqceckgh844akpqipmd7enfx8"));
-        
-        System.out.println(tabela.buscar("c1yf8w4r6i0ytnweudfenhh3gqceckgh844akpqipmd7enfx8"));
+        HashTable tabelaDois = new HashTable();
 
-        /*
-        lista.inserir("Alucard");
-        lista.inserir("Bahamooth");
-        lista.inserir("Cleiton");
-        lista.exibir();
-        System.out.println(lista.tamanho());
-        lista.inserir("Draven");
-        lista.exibir();
-        System.out.println(lista.tamanho());
-        lista.remover("Bahamooth");
-        lista.exibir();
-        System.out.println(lista.buscar("Draven"));
-        System.out.println(lista.buscar("Bahamooth"));
-        lista.inserir("Frederico",3);
-        lista.exibir();
-        lista.inserir("Gemini",1);
-        lista.exibir();
-        lista.inserir("Hermanoteu",0);
-        lista.exibir();
-        lista.inserir("A",-1);
-        lista.exibir();
-        lista.inserir("Z",26);
-        lista.exibir();
-        System.out.println(lista.buscar(3));
-        System.out.println(lista.buscar(0));
-        System.out.println(lista.buscar(-1));
-        System.out.println(lista.buscar(26));
-        System.out.println(lista.buscar(6));
-        System.out.println(lista.buscar(5));*/
+        tabelaDois.inserir("A");
+        tabelaDois.inserir("B");
+        tabelaDois.inserir("C");
+        tabelaDois.inserir("d");
+        tabelaDois.inserir("D");
+        tabelaDois.inserir("f");
+        tabelaDois.inserir("F");
+        tabelaDois.inserir("g");
+        tabelaDois.inserir("G");
+        tabelaDois.inserir("P");
+        tabelaDois.inserir("d");
+        tabelaDois.inserir("g");
+        tabelaDois.inserir("I");
+        tabelaDois.inserir("P");
+        tabelaDois.inserir("dgjhn");
+        tabelaDois.inserir("sdh");
+        tabelaDois.inserir("sdghj");
+        tabelaDois.inserir("tuyh");
+        tabelaDois.imprimir();
+        
+        System.out.println("\n\nBuscando: \n"+
+        "dgjhn || " + tabelaDois.buscar("dgjhn")+
+        "\nd || " + tabelaDois.buscar("d") +
+        "\nI || " + tabelaDois.buscar("I"));
+
+        System.out.println("\n\nRemovendo: dgjhn || d || I");
+        tabelaDois.remover("dgjhn");
+        tabelaDois.remover("d");
+        tabelaDois.remover("I");
+
+        tabelaDois.imprimir();
+
+        System.out.println("\n\nBuscando: \n"+
+        "dgjhn || " + tabelaDois.buscar("dgjhn")+
+        "\nd || " + tabelaDois.buscar("d") +
+        "\nI || " + tabelaDois.buscar("I"));
+
+        
+
+        System.out.println("Inicializando nova TabelaHash...");
+        HashTable tabelaUm = new HashTable();
+        
+        System.out.println("\nInserindo linhas de texto do arquivo \"arquivo_50kb\"");
+        tabelaUm.inserirDeArquivo("arquivo_50kb");
+        tabelaUm.imprimir();
+        
+        System.out.println("Buscando c1yf8w4r6i0ytqnweudfenhh3gqceckgh844akpqipmd7enfx8\n"
+            +tabelaUm.buscar("c1yf8w4r6i0ytqnweudfenhh3gqceckgh844akpqipmd7enfx8"));
+        //
+        System.out.println("Buscando 1yf8w4r6i0ytqnweudfenhh3gqceckgh844akpqipmd7enfx8\n"
+            +tabelaUm.buscar("1yf8w4r6i0ytqnweudfenhh3gqceckgh844akpqipmd7enfx8"));
+
+        System.out.println("Removendo c1yf8w4r6i0ytqnweudfenhh3gqceckgh844akpqipmd7enfx8");
+        tabelaUm.remover("c1yf8w4r6i0ytqnweudfenhh3gqceckgh844akpqipmd7enfx8");
+        
+        System.out.println("Buscando c1yf8w4r6i0ytqnweudfenhh3gqceckgh844akpqipmd7enfx8\n"
+            +tabelaUm.buscar("c1yf8w4r6i0ytqnweudfenhh3gqceckgh844akpqipmd7enfx8"));
+        //
     }
 
 }
