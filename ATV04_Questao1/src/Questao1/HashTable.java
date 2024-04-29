@@ -31,22 +31,23 @@ public class HashTable {
       if ((double) quantidadeElementos() / elementos.tamanho() >= 0.75) {
          resize();
       }
-      int posicao = gerarPosicao(frase);
-
-      elementos.buscar(posicao).inserir(frase);
+      if (buscar(frase) == false) {
+         int posicao = gerarPosicao(frase);
+         elementos.buscar(posicao).inserir(frase);
+      }
    }
 
    public void inserirDeArquivo(String path) {
       String palavra = "";
-      try (BufferedReader br = new BufferedReader(new FileReader("src\\Entrada\\"+path+".txt"))) {
-        while (br.ready()) {
-          palavra = br.readLine();
-          inserir(palavra);
-        }
+      try (BufferedReader br = new BufferedReader(new FileReader("src\\Entrada\\" + path + ".txt"))) {
+         while (br.ready()) {
+            palavra = br.readLine();
+            inserir(palavra);
+         }
       } catch (IOException e) {
-        System.out.println("Arquivo não encontrado");
+         System.out.println("Arquivo não encontrado");
       }
-    }
+   }
 
    private int quantidadeElementos() {
       int quantidade = 0;
@@ -55,6 +56,13 @@ public class HashTable {
          quantidade += atualLista.tamanho();
       }
       return quantidade;
+   }
+
+   public void remover(String frase) {
+      if (buscar(frase) == true) {
+         int posicao = gerarPosicao(frase);
+         elementos.buscar(posicao).remover(frase);
+      }
    }
 
    public void imprimir() {
@@ -66,13 +74,13 @@ public class HashTable {
       }
    }
 
-   public boolean buscar(String frase){
+   public boolean buscar(String frase) {
       int posicao = gerarPosicao(frase);
       Lista<String> listaElemento = elementos.buscar(posicao);
       int hashFrase = Hash.of(frase);
-      for(int i=0;i<listaElemento.tamanho();i++){
-         if(Hash.of(listaElemento.buscar(i))==hashFrase){
-            System.out.println(listaElemento.buscar(i));
+      for (int i = 0; i < listaElemento.tamanho(); i++) {
+         if (Hash.of(listaElemento.buscar(i)) == hashFrase) {
+            listaElemento.buscar(i);
             return true;
          }
       }
