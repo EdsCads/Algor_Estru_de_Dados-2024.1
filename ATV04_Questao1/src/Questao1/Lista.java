@@ -1,5 +1,4 @@
-package Questao1_AgainDenovo;
-
+package Questao1;
 public class Lista<T>{
   private Node<T> head;
   private Node<T> last;

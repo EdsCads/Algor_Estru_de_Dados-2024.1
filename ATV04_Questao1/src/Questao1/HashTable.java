@@ -1,4 +1,4 @@
-package Questao1_AgainDenovo;
+package Questao1;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -80,7 +80,6 @@ public class HashTable {
       int hashFrase = Hash.of(frase);
       for (int i = 0; i < listaElemento.tamanho(); i++) {
          if (Hash.of(listaElemento.buscar(i)) == hashFrase) {
-            listaElemento.buscar(i);
             return true;
          }
       }

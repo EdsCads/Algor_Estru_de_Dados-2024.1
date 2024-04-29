@@ -1,4 +1,4 @@
-package Questao1_AgainDenovo;
+package Questao1;
 
 public class Main {
 
